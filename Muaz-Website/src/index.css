@@ -1,0 +1,252 @@
+*{
+
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+}
+@font-face 
+{
+  font-family: 'Sketch';
+  src: url('./Sketch.ttf') format('truetype');
+}
+.background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transition: opacity 1s ease-in-out;
+  z-index: -1;
+}
+
+#background1 {
+  background: linear-gradient(to bottom right, #d3321d, #feb47b); /*OG colorway #ff7e5f, #feb47b*/
+  opacity: 1;
+}
+
+#background2 {
+  background: linear-gradient(to bottom right, #524175, #295270);
+  opacity: 0;
+}
+
+
+body,html
+{
+  overflow-x: hidden;
+  overflow-y: hidden;
+  font-family: 'Zilla Slab', serif;
+}
+
+.webgl
+{
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+
+nav
+{
+  color:burlywood;
+  z-index: 2;         /* the z inded is the position and this is 2 because the one above is 1 and 2 make it able to be seen*/
+  position: relative; /* makes the position relative to the one above*/
+  padding: 4rem 8rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+nav a /* nav a is the sphere defined in index.html*/
+{
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+}
+
+nav ul /*explore and create*/
+{
+  list-style: none;
+  display: flex;
+  gap: 4rem;
+}
+
+.Hello /*Hi im muaz ahmad*/
+{
+  opacity: 1;
+  color: white;
+  z-index: 0;
+  position: absolute;
+  display: flex;
+  font-size: 6.5rem;
+  font-family: 'Sketch', sans-serif;
+                                                
+  right: 22%;
+  top: 80%; /*75% puts it a below the sphere*/
+  transform: translate(-22%,-80%);
+  /* background: linear-gradient(to bottom right, #524175, #295270); 
+            -webkit-text-fill-color: transparent; 
+            -webkit-background-clip: text;  */
+}
+
+.Job /*Job*/
+{
+  opacity: 1;
+  color: white;
+  z-index: 0;
+  position: absolute;
+  display: flex;
+  font-size: 6.5rem;
+  font-family: 'Sketch', sans-serif;
+                                                
+  right: 21%;
+  top: 95%; /*75% puts it a below the sphere*/
+  transform: translate(-21%,-95%);
+  /* background: linear-gradient(to bottom right, #524175, #295270); 
+            -webkit-text-fill-color: transparent; 
+            -webkit-background-clip: text;  */
+}
+
+.image
+ {
+  z-index: 0;
+  width: 150px;
+  height: 150px;
+  position: absolute;
+  left: 8%;  /* Center the element horizontally */
+  top: 38%;   /* Center the element vertically */
+  transform: translate(-38%, -8%); /* Offset the element by half its width and height */
+}
+
+.Drag
+{
+  color: white;
+  z-index: 0;
+  position: absolute;
+  display: flex;
+  font-size: 1.5rem;
+  font-family: 'Sketch', sans-serif;
+                                                
+  left: 17%;  /* Center the element horizontally */
+  top: 44.5%;   /* Center the element vertically */
+  transform: translate(-44.5%, -17%); /* Offset the element by half its width and height */
+}
+
+.Night
+{
+  color: white;
+  z-index: 0;
+  position: absolute;
+  display: flex;
+  font-size: 1.5rem;
+  font-family: 'Sketch', sans-serif;
+                                                
+  left: 17%;  /* Center the element horizontally */
+  top: 50%;   /* Center the element vertically */
+  transform: translate(-50%, -17%); /* Offset the element by half its width and height */
+}
+
+.Day
+{
+  color: white;
+  z-index: 0;
+  position: absolute;
+  display: flex;
+  font-size: 1.5rem;
+  font-family: 'Sketch', sans-serif;
+                                                
+  left: 14.3%;  /* Center the element horizontally */
+  top: 53%;   /* Center the element vertically */
+  transform: translate(-53%, -1.34%); /* Offset the element by half its width and height */
+}
+
+.Day2
+{
+  color: white;
+  z-index: 0;
+  position: absolute;
+  display: flex;
+  font-size: 1.5rem;
+  font-family: 'Sketch', sans-serif;
+                                                
+  left: 19.7%;  /* Center the element horizontally */
+  top: 53.6%;   /* Center the element vertically */
+  transform: translate(-53.6%, -19.7%); /* Offset the element by half its width and height */
+}
+
+
+.Right
+ {
+  z-index: 0;
+  width: 70px;
+  height: 70px;
+  position: absolute;
+  left: 22%;  /* Center the element horizontally */
+  top: 48.6%;   /* Center the element vertically */
+  transform: translate(-48.6%, -22%); /* Offset the element by half its width and height */
+}
+.Left
+ {
+  z-index: 0;
+  width: 70px;
+  height: 70px;
+  position: absolute;
+  left: 22%;  /* Center the element horizontally */
+  top: 52.1%;   /* Center the element vertically */
+  transform: translate(-52.1%, -22%); /* Offset the element by half its width and height */
+}
+
+.AboutMe /*About Me*/
+{
+  opacity: 0;
+  color: white;
+  z-index: 0;
+  position: absolute;
+  display: flex;
+  font-size: 5rem;
+  font-family: 'Sketch', sans-serif;
+
+  left: 35%;
+  top: 70%; 
+  transform: translate(-60%,-40%);
+                                                
+  /* left: 60%;
+  top: 10%; 
+  transform: translate(-10%,-60%); */
+  /* background: linear-gradient(to bottom right, #524175, #295270); 
+            -webkit-text-fill-color: transparent; 
+            -webkit-background-clip: text;  */
+}
+
+.Summary
+{
+  opacity: 0;
+  color: white;
+  z-index: 0;
+  position: absolute;
+  display: flex;
+  font-size: 1.5rem;
+  font-family: 'Sketch', sans-serif;
+  text-align: center;
+        
+  left: 40%;
+  top: 85%; 
+  transform: translate(-60%,-40%);
+  /* left: 65%;
+  top: 30%; 
+  transform: translate(-30%,-65%); */
+  /* background: linear-gradient(to bottom right, #524175, #295270); 
+            -webkit-text-fill-color: transparent; 
+            -webkit-background-clip: text;  */
+}
+
+.visible 
+{
+  opacity: 1;
+  transition: opacity 0.5s ease;
+}
+
+.hidden
+ {
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
