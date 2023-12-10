@@ -251,3 +251,126 @@ nav ul /*explore and create*/
   transition: opacity 0.5s ease;
 }
 
+
+
+@media screen and (width: 1920px) and (height: 1080px) {
+  /* CSS rules here will only apply to screens that are exactly 1920x1080 */
+
+  .Hello
+  {
+    font-size: 7.5rem;
+    right: 29%;
+    top: 80%; /*75% puts it a below the sphere*/
+    transform: translate(-29%,-80%);
+  }
+  .Job
+  {
+  font-size: 7.5rem;
+  right: 27%;
+  top: 95%; /*75% puts it a below the sphere*/
+  transform: translate(-27%,-95%);
+  }
+
+  .Drag
+  {
+    font-size: 2.5rem;
+                                                
+  left: 18%;  /* Center the element horizontally */
+  top: 47.5%;   /* Center the element vertically */
+  transform: translate(-47.5%, -18%); /* Offset the element by half its width and height */
+  }
+
+  .image
+ {
+  z-index: 0;
+  width: 250px;
+  height: 250px;
+  left: 6%;  /* Center the element horizontally */
+  top: 38%;   /* Center the element vertically */
+  transform: translate(-38%, -6%); /* Offset the element by half its width and height */
+}
+
+.Night
+{
+
+  font-size: 2.5rem;
+  font-family: 'Sketch', sans-serif;
+                                                
+  left: 17%;  /* Center the element horizontally */
+  top: 55%;   /* Center the element vertically */
+  transform: translate(-55%, -17%); /* Offset the element by half its width and height */
+}
+
+.Day
+{
+  
+  font-size: 2.5rem;
+  font-family: 'Sketch', sans-serif;
+                                                
+  left: 13.3%;  /* Center the element horizontally */
+  top: 60%;   /* Center the element vertically */
+  transform: translate(-60%, -13.3%); /* Offset the element by half its width and height */
+}
+
+.Day2
+{
+  
+  font-size: 2.3rem;
+  font-family: 'Sketch', sans-serif;
+                                                
+  left: 20%;  /* Center the element horizontally */
+  top: 60.4%;   /* Center the element vertically */
+  transform: translate(-60.4%, -20%); /* Offset the element by half its width and height */
+}
+
+
+.Right
+ {
+  z-index: 0;
+  width: 110px;
+  height: 110px;
+  
+  left: 23.7%;  /* Center the element horizontally */
+  top: 58.9%;   /* Center the element vertically */
+  transform: translate(-58.9%, -23.7%); /* Offset the element by half its width and height */
+}
+.Left
+ {
+  z-index: 0;
+  width: 110px;
+  height: 110px;
+  
+  left: 23.7%;  /* Center the element horizontally */
+  top: 53.5%;   /* Center the element vertically */
+  transform: translate(-53.5%, -22%); /* Offset the element by half its width and height */
+}
+
+
+
+.Summary
+{
+  
+  font-size: 2rem;
+  font-family: 'Sketch', sans-serif;
+  text-align: center;
+        
+  left: 40%;
+  top: 85%; 
+  transform: translate(-60%,-40%);
+  
+}
+
+.AboutMe /*About Me*/
+{
+  
+  font-size: 7rem;
+  font-family: 'Sketch', sans-serif;
+
+  left: 35%;
+  top: 70%; 
+  transform: translate(-60%,-40%);
+                                                
+
+}
+  /* other styles */
+}

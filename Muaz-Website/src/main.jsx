@@ -526,6 +526,7 @@ window.addEventListener('resize', () => {
   sizes.width = window.innerWidth;
   sizes.height = window.innerHeight;
 
+
   // Update camera
   camera.aspect = sizes.width / sizes.height;
   camera.updateProjectionMatrix();
@@ -534,12 +535,11 @@ window.addEventListener('resize', () => {
   camera.fov = calculateFOV(sizes.width, sizes.height);
   camera.updateProjectionMatrix();
 
-  // Adjust object scales
-  // adjustObjectScales();
 
   // Update renderer
   renderer.setSize(sizes.width, sizes.height);
 });
+
 
 function calculateFOV(width, height) {
   // Implement your logic to calculate FOV based on width and height
