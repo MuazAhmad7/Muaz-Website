@@ -1,21 +1,13 @@
-// vite.config.js
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react-swc'
 
+// https://vitejs.dev/config/
 export default defineConfig({
-  base: '/Muaz-Website/', // Your project's base path
+  base: '/Muaz-Website/',
   plugins: [react()],
   build: {
-    outDir: 'dist', // Specify the output directory as 'dist'
-    rollupOptions: {
-      output: {
-        assetFileNames: (assetInfo) => {
-          if (assetInfo.name.endsWith('.glb')) {
-            return 'assets/models/[name]-[hash][extname]';
-          }
-          return 'assets/[name]-[hash][extname]';
-        }
-      }
-    }
+    outDir: 'dist', // Specify the output directory
+    assetsInclude: ['**/*.glb'],
+    chunkSizeWarningLimit: 1600,
   }
-});
+})
