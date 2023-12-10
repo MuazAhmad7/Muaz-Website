@@ -145,7 +145,7 @@ const curve = new THREE.CatmullRomCurve3(points);
 
 let t = 0;
 const animateBird = (model3) => {
-    t += 0.001;
+    t += 0.06 * delta;
     if (t > 1) t = 0;
 
     const position = curve.getPoint(t);
@@ -168,7 +168,7 @@ const curve2 = new THREE.CatmullRomCurve3(points2);
 let p = 0;
 const animateBird2 = (model) => 
 {
-    p += 0.00084;
+    p += 0.04 * delta;
     if (p > 1) p = 0;
 
     const position = curve2.getPoint(p);
@@ -195,7 +195,7 @@ const animateShip = (model4) =>
 {
   if(!animationCompleted)
   {
-    v += 0.0015;
+    v += 0.093 * delta;
     if (v > 1)
     {
       {
@@ -521,35 +521,78 @@ controls.enableRotate = false
 
 //Resize
 
-window.addEventListener('resize', () => 
-{
-  //update sizes
-  sizes.width = window.innerWidth;    //update as in lets say i drag the window to make it bigger, it needs to update
-  sizes.height = window.innerHeight; 
-  //update camera
-  camera.updateProjectionMatrix()
-  camera.aspect = sizes.width / sizes.height
-  renderer.setSize(sizes.width, sizes.height)
-})
+window.addEventListener('resize', () => {
+  // Update sizes
+  sizes.width = window.innerWidth;
+  sizes.height = window.innerHeight;
+
+  // Update camera
+  camera.aspect = sizes.width / sizes.height;
+  camera.updateProjectionMatrix();
+
+  // Adjust FOV based on width/height ratio
+  camera.fov = calculateFOV(sizes.width, sizes.height);
+  camera.updateProjectionMatrix();
+
+  // Adjust object scales
+  // adjustObjectScales();
+
+  // Update renderer
+  renderer.setSize(sizes.width, sizes.height);
+});
+
+function calculateFOV(width, height) {
+  // Implement your logic to calculate FOV based on width and height
+  let aspectRatio = width / height;
+  let baseFOV = 45; // Base FOV for a standard aspect ratio
+  if (aspectRatio > 1.5)
+   { // Wider screens
+      return baseFOV + (aspectRatio - 1.5) * 10; // Increase FOV
+  } else 
+  {
+      return baseFOV - (1.5 - aspectRatio) * 10; // Decrease FOV
+  }
+}
+
+// function adjustObjectScales() {
+//   // Implement your logic to scale objects based on window size
+//   let scale = calculateScaleBasedOnWindowSize();
+//   // Apply this scale to your objects
+//   sphere.scale.set(scale, scale, scale);
+//   // ... Adjust other objects as needed
+// }
+
+// function calculateScaleBasedOnWindowSize() {
+//   // Logic to determine scale based on window size
+//   let scale = 1; // Default scale
+//   // Modify 'scale' based on window.innerWidth and window.innerHeight
+//   // ...
+//   return scale;
+// }
+
 
 const clock = new THREE.Clock();
+let delta;
 
 const loop = () => // this loop basicalyy just keeps updating everything to make sure everythings is in sync
 {
   controls.update()
-  const delta = clock.getDelta();   //the reason why u put if statements is b/c if the model isn't loaded then it will crash so you put the if to make sure it only runs when the model is loaded
+  delta = clock.getDelta(); //this sht right here is op af 
+    //the reason why u put if statements is b/c if the model isn't loaded then it will crash so you put the if to make sure it only runs when the model is loaded
     if (mixer) mixer.update(delta);
     if (mixer3) mixer3.update(delta);
     if (model3) animateBird(model3)
     if (model) animateBird2(model)
     if (startAnimation && model4 && !animationCompleted) animateShip(model4);
 
-  sphere.rotation.y += 0.005; // Adjust rotation speed as needed
-  sphere.rotation.z += 0.005;
+    const sphereRotationSpeed = 0.32; // Adjust this value as needed
+    sphere.rotation.y += sphereRotationSpeed * delta;
+    sphere.rotation.z += sphereRotationSpeed * delta;
   
+    let earthRotationSpeed = 0.32;
   if (earth)
    {
-    earth.rotation.y += 0.005; // Rotate around Y-axis for a more realistic effect
+    earth.rotation.y += earthRotationSpeed * delta; // Rotate around Y-axis for a more realistic effect
   }
   renderer.render(scene, camera);
   window.requestAnimationFrame(loop)
