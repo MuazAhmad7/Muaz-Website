@@ -550,7 +550,7 @@ function calculateFOV(width, height) {
       return baseFOV + (aspectRatio - 1.5) * 10; // Increase FOV
   } else 
   {
-      return baseFOV - (1.5 - aspectRatio) * 10; // Decrease FOV
+      return baseFOV - (1.5 - aspectRatio) * 2; // Decrease FOV
   }
 }
 
