@@ -11,7 +11,7 @@ const scene = new THREE.Scene();
 const loader = new GLTFLoader();
 let mixer;
 let model;
-loader.load('bird.glb', function(glb)
+loader.load('./bird.glb', function(glb)
 {
     model = glb.scene;
     model.scale.set(0.1, 0.1, 0.1); // Adjust the scale if needed
@@ -58,7 +58,7 @@ function(error) {
 //second bird
 let mixer3;
 let model3;
-loader.load('bird.glb', function(glb)
+loader.load('./bird.glb', function(glb)
 {
     model3 = glb.scene;
     model3.scale.set(0.05, 0.05, 0.05); // Adjust the scale if needed

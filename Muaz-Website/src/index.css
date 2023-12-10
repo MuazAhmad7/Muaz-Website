@@ -8,7 +8,7 @@
 @font-face 
 {
   font-family: 'Sketch';
-  src: url('./Sketch.ttf') format('truetype');
+  src: url("./Sketch.ttf") format('truetype');
 }
 .background {
   position: fixed;
