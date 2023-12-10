@@ -3,6 +3,14 @@ import './index.css'
 import gsap from 'gsap'
 import {OrbitControls} from 'three/examples/jsm/controls/OrbitControls'
 import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
+import birdModel from './assets/bird.glb';
+import rocketModel from './assets/Rocketship.glb';
+import earthModel from './assets/Earth.glb';
+import bird from './assets/birds-19624.mp3';
+import rocket from './assets/large-rocket-engine-86240.mp3';
+
+// Use these imported assets in your Three.js code
+
 
 //scene
 const scene = new THREE.Scene();
@@ -11,7 +19,7 @@ const scene = new THREE.Scene();
 const loader = new GLTFLoader();
 let mixer;
 let model;
-loader.load('./bird.glb', function(glb)
+loader.load(birdModel, function(glb)
 {
     model = glb.scene;
     model.scale.set(0.1, 0.1, 0.1); // Adjust the scale if needed
@@ -58,7 +66,7 @@ function(error) {
 //second bird
 let mixer3;
 let model3;
-loader.load('./bird.glb', function(glb)
+loader.load(birdModel, function(glb)
 {
     model3 = glb.scene;
     model3.scale.set(0.05, 0.05, 0.05); // Adjust the scale if needed
@@ -110,7 +118,7 @@ function(error) {
 
 
 let model4;
-loader.load('./Rocketship.glb', function(glb)
+loader.load(rocketModel, function(glb)
 {
     model4 = glb.scene;
     model4.scale.set(0.05, 0.05, 0.05); // Adjust the scale if needed
@@ -400,7 +408,7 @@ scene.add(star20)
 
 let earth;
 
-loader.load('./Earth.glb', function(glb)
+loader.load(earthModel, function(glb)
 {
   earth = glb.scene;
   earth.scale.set(0.06, 0.06, 0.06); // Adjust the scale if needed
@@ -464,7 +472,7 @@ const rocketSound = new THREE.Audio(listener);
 
 // Load bird sound
 const audioLoader = new THREE.AudioLoader();
-audioLoader.load('./birds-19624.mp3', function(buffer) //idk what buffer does exactly but its a function that makes it play the sound
+audioLoader.load(bird, function(buffer) //idk what buffer does exactly but its a function that makes it play the sound
 {
     birdSound.setBuffer(buffer);
     birdSound.setLoop(true);
@@ -473,7 +481,7 @@ audioLoader.load('./birds-19624.mp3', function(buffer) //idk what buffer does ex
 });
 
 // Load rocket sound
-audioLoader.load('./large-rocket-engine-86240.mp3', function(buffer) 
+audioLoader.load(rocket, function(buffer) 
 {
 
     rocketSound.setBuffer(buffer);
